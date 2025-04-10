@@ -1,0 +1,57 @@
+# --- Global ---
+__pycache__/
+*.py[cod]
+*.log
+*.sqlite3
+*.env
+.env.*
+.DS_Store
+Thumbs.db
+
+# --- Python / Django ---
+*.pyc
+db.sqlite3
+*.pot
+*.py[co]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-log.txt
+htmlcov/
+.coverage
+.tox/
+.mypy_cache/
+.pytest_cache/
+.pyre/
+.pyenv/
+.venv/
+venv/
+env/
+ENV/
+.idea/
+.vscode/
+
+# Django media/static (if not managed via Docker)
+media/
+staticfiles/
+static/
+
+# --- Node / Vue ---
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.production
+frontend/.env.development
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# --- Docker ---
+*.pid
+*.seed
+docker-compose.override.yml
+docker-compose.prod.yml
+docker-compose.*.yml*
