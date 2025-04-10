@@ -18,5 +18,5 @@ cp env.example .env
 docker-compose up --build
 ```
 
-4. Access your browser
-[url]http://localhost
+4. Access your browser:
+http://localhost
