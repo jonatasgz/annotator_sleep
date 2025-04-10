@@ -10,7 +10,7 @@ cd annotator_sleep
 
 2. Copy .env example
 ```
-cp .env.example .env
+cp env.example .env
 ```
 
 3. Build it and run it
