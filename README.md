@@ -12,6 +12,7 @@ cd annotator_sleep
 ```
 cp env.example .env
 ```
+Change appropriate settings
 
 3. Build it and run it
 ```
@@ -19,4 +20,4 @@ docker-compose up --build
 ```
 
 4. Access your browser:
-http://localhost
+http://localhost:5403

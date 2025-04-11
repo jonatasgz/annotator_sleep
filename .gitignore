@@ -4,9 +4,10 @@ __pycache__/
 *.log
 *.sqlite3
 *.env
-.env.*
+.env
 .DS_Store
 Thumbs.db
+!.env.production
 
 # --- Python / Django ---
 *.pyc
