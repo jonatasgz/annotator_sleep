@@ -119,7 +119,7 @@
                       </div>
                     </template>
 
-                    <template v-else-if="field=['diabetes', 'dyslipidemia', 'arterial_hypertension', 'snoring', 'apneas'].includes(field)">
+                    <template v-else-if="['diabetes', 'dyslipidemia', 'arterial_hypertension', 'snoring', 'apneas'].includes(field)">
                       <div class="d-flex gap-2">
                         <label><input type="radio" value="yes" v-model="episode[field]" /> Yes</label>
                         <label><input type="radio" value="no" v-model="episode[field]" /> No</label>
