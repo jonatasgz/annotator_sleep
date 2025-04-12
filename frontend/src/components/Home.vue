@@ -119,7 +119,8 @@
                       </div>
                     </template>
 
-                    <template v-else-if="['diabetes', 'dyslipidemia', 'arterial_hypertension', 'snoring', 'apneas'].includes(field)">
+                    <template
+                      v-else-if="['diabetes', 'dyslipidemia', 'arterial_hypertension', 'snoring', 'apneas'].includes(field)">
                       <div class="d-flex gap-2">
                         <label><input type="radio" value="yes" v-model="episode[field]" /> Yes</label>
                         <label><input type="radio" value="no" v-model="episode[field]" /> No</label>
@@ -383,6 +384,10 @@ const submitForm = async () => {
     console.log("Episode submitted successfully:", response.data);
     message.value = "Episode submitted successfully!";
     episodeLoaded.value = false
+    episode.value = ref({
+      patient_id: "",
+      episode_date: "",
+    });
     formPage.value = 1
     inputText.value = ""
     editText.value = true
