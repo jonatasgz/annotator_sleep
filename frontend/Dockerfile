@@ -8,6 +8,8 @@ RUN npm install
 COPY frontend .
 RUN npm run build
 
+RUN apt-get update && apt-get install -y git
+
 # ---- Serve with nginx ----
 FROM nginx:alpine
 
