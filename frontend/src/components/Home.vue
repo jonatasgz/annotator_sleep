@@ -79,7 +79,7 @@
                 <div v-show="formPage === index + 2">
                   <div v-for="field in group" :key="field" class="mb-2">
                     <label class="form-label text-capitalize mb-1 mt-2">{{ field.replaceAll('_', ' ') }}
-                      <span v-if="predictions[field]" class="ms-2 badge bg-info text-dark">
+                      <span v-if="predictions[field] && showPredict" class="ms-2 badge bg-info text-dark">
                         {{ predictions[field] }}
                       </span>
                     </label>
@@ -215,7 +215,6 @@
         <!-- Right Column: Highlights -->
         <div class="col-lg-3">
           <div class="sticky-top" style="top: 1rem">
-            <h5 class="text-center py-2">Words to Highlight</h5>
 
             <div class="card shadow-sm mb-3">
               <div class="card-body py-2 px-3">
@@ -223,11 +222,22 @@
                   <label class="form-check-label" for="autoNERtoggle">
                     Automatic recognition
                   </label>
-                  <input class="form-check-input" type="checkbox" id="autoNERtoggle" v-model="autoHighlightEnabled"
-                    @change="saveUserConfig" />
+                  <input class="form-check-input" type="checkbox" id="autoNERtoggle" v-model="autoHighlightEnabled"/>
                 </div>
               </div>
             </div>
+
+            <div class="card shadow-sm mb-3">
+              <div class="card-body py-2 px-3">
+                <div class="form-check form-switch d-flex justify-content-between align-items-center">
+                  <label class="form-check-label" for="predictionsToggle">
+                    Show predictions
+                  </label>
+                  <input class="form-check-input" type="checkbox" id="predictionsToggle" v-model="showPredict"/>
+                </div>
+              </div>
+            </div>
+
             <div class="card shadow-sm mb-3">
               <div class="card-body p-3">
                 <h6 class="mb-3">Add Manual Highlight</h6>
@@ -340,6 +350,7 @@ const predictions = ref({})
 const message = ref("");
 const formPage = ref(1);
 const autoHighlightEnabled = ref(true)
+const showPredict = ref(true)
 
 onMounted(async () => {
   try {
